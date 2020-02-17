@@ -14,22 +14,21 @@ def scatter_with_color_dimension_graph (features,target,layout_labels):
 	'''
 	trace1 = go.Scatter( y = features,mode ='markers ',marker = dict (size = 6,color = target,colorscale = 'Viridis ', showscale = True))
 
-	layout = go.Layout(title = layout_labels [2] ,
-	xaxis = dict(title = layout_labels [0]) , yaxis = dict ( title = layout_labels [1]))
+	layout = go.Layout(title = layout_labels [2], xaxis = dict(title = layout_labels [0]), yaxis = dict ( title = layout_labels [1]))
 	data = [trace1]
-	fig = Figure( data =data , layout = layout )
+	fig = Figure(data = data , layout = layout)
 	print(" images ")
 	fig.show ()
 
 def main ():
-	DATASET_PATH = './ glass_data_labeled . csv '
+	DATASET_PATH = './ glass_data_labeled.csv '
 	df = pd. read_csv ( DATASET_PATH )
 
-	features = df['Mg ']
-	targets = df['Type ']
+	features = df['Mg']
+	targets = df['Type']
 
-	xlabel = 'Data Index '
-	ylabel = 'Mg Value '
+	xlabel = 'Data Index'
+	ylabel = 'Mg Value'
 	graph_title = 'Mg -- Glass Type Density Graph '
 	graph_labels = [ xlabel , ylabel , graph_title ]
 
